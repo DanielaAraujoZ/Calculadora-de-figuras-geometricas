@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./EstilosVersionActual.css">
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+    <title>Figuras Geométricas</title>
+</head>
+
+<body id="body">
+
+    <header>
+        <!-- TITULO -->
+        <h1 id="title">
+            FIGURAS GEOMÉTRICAS
+        </h1>
+        <h2 id="title"> ¡BIENVENIDO!</h2>
+        <p id="texto1">
+            No olvides ingresar los valores solicitados en cada figura
+        </p>
+
+    </header>
+
+    <div class="-accordion">
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <!--Primera columna-->
+                <div class="col-4">
+                    <button type="button" class="accordion_button"> CUADRADO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="CuadradoP"></label>
+                            <input id="CuadradoP" type="number" name="Lado_Cuadrado" placeholder="Lado" style="width: 200px;" />
+                            <input type="reset" value="Borrar todo">
+                            <div class="row">
+                                <div class="col"><button class="button_Cuadrado" type="button"
+                                        onclick="calcularPerimetroCuadrado()"> Perímetro <p id="cuadrado_Perimetro">
+                                        </p></button>
+                                </div>
+                                <div class="col"><button class="button_Cuadrado" type="button"
+                                        onclick="calcularAreaCuadrado()"> Área <p id="cuadrado_Area"> </p> </button>
+                                </div>
+                                <div class="col"><button class="button_Cuadrado" type="button"
+                                        onclick="calcularVolumenCuadrado()"> Volumen <p id="cuadrado_Volumen"> </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <button type="button" class="accordion_button"> RECTÁNGULO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="Rectangulo"></label>
+                            <input id="RectanguloLado" type="number" name="Largo_Rectangulo" placeholder="Largo"
+                                style="width:80px" />
+                            <input id="RectanguloAlto" type="number" name="Alto_Rectangulo" placeholder="Alto"
+                                style="width:80px" />
+                            <input id="RectanguloAncho" type="number" name="Ancho_Rectangulo" placeholder="Ancho"
+                                style="width:80px" />
+                            <input type="reset" value="Borrar todo">
+                        </form>
+                    </div>
+
+                    <button type="button" class="accordion_button"> TRIÁNGULO EQUILÁTERO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputTrianguloE"></label>
+                            <input id="InputTrianguloE" type="number" placeholder="Lado" /> <br><input
+                                id="InputTrianguloE" type="number" placeholder="Altura" />
+                            <br><button type="button" onclick="calcularPerimetroTrianguloE()">
+                                Perímetro
+                                <input id="InputTrianguloE" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <br><button type="button" onclick="calcularAreaTringuloE()">
+                                Área
+                                <input id="InputTrianguloE" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <br><button type="button" onclick="calcularVolumenPiramideC()">
+                                Volumen
+                                <input id="InputTrianguloE" type="number" placeholder="Tu resultado" />
+                            </button>
+                        </form>
+                        </form>
+                    </div>
+
+                    <button type="button" class="accordion_button"> TRIÁNGULO RECTÁNGULO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputTrianguloR"></label>
+                            <input id="InputTrianguloR" type="number" placeholder="Cateto 1" /><br><input
+                                id="InputTrianguloR" type="number" placeholder="Cateto 2" /><br><input
+                                id="InputTrianguloR" type="number" placeholder="Hipotenusa" /><br><input
+                                id="InputTrianguloR" type="number" placeholder="Ancho (Para volumen)" />
+                            <br><button type="button" onclick="calcularPerimetroTrianguloR()">
+                                Perímetro
+                                <input id="InputTrianguloR" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <br><button type="button" onclick="calcularAreaTrianguloR()">
+                                Área
+                                <input id="InputTrianguloR" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <br><button type="button" onclick="calcularVolumenTrianguloR()">
+                                Volumen
+                                <input id="InputTrianguloR" type="number" placeholder="Tu resultado" />
+                            </button>
+                        </form>
+                    </div>
+
+                    <button type="button" class="accordion_button"> CIRCULO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputCirculo"></label>
+                            <input id="InputCirculo" type="number" placeholder="Radio" />
+                            <br><button type="button" onclick="calcularPerimetroCirculo()">
+                                Perímetro
+                                <input id="InputCirculo" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <br><button type="button" onclick="calcularAreaCirculo()">
+                                Área
+                                <input id="InputCirculo" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <br><button type="button" onclick="calcularVolumenCirculo()">
+                                Volumen
+                                <input id="InputCirculo" type="number" placeholder="Tu resultado" />
+                            </button>
+                        </form>
+                    </div>
+
+
+
+                </div>
+
+                <!--Segunda columna-->
+                <div class="col-4">
+                    <button type="button" class="accordion_button"> ROMBO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputRombo"> </label>
+                            <input id="InputRombo" type="number" placeholder="Lado" /><br><input id="InputRombo"
+                                type="number" placeholder="Diagonal menor" /><br><input id="InputRombo" type="number"
+                                placeholder="Diagonal Mayor" />
+                            <br><button type="button" onclick="calcularPerimetroRombo()">
+                                Perímetro
+                                <input id="InputRombo" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <button type="button" onclick="calcularAreaRombo()">
+                                Área
+                                <input id="InputRombo" type="number" placeholder="Tu resultado" />
+                            </button>
+                        </form>
+                    </div>
+
+
+
+                    <button type="button" class="accordion_button"> TRAPECIO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputTrapecio"> </label>
+                            <input id="InputTrapecio" type="number" placeholder="Altura" /> <br><input
+                                id="InputTrapecio" type="number" placeholder="Base Menor" /><br><input
+                                id="InputTrapecio" type="number" placeholder="Base Mayor" />
+                            <br><button type="button" onclick="calcularPerimetroTrapecio()">
+                                Perímetro
+                                <input id="InputTrapecio" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <button type="button" onclick="calcularAreaTrapecio()">
+                                Área
+                                <input id="InputTrapecio" type="number" placeholder="Tu resultado" />
+                            </button>
+                        </form>
+                    </div>
+
+                    <button type="button" class="accordion_button"> PARALELOGRAMO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputParalelogramo"> </label>
+                            <input id="InputParalelogramo" type="number" placeholder="Altura" /> <br><input
+                                id="InputParalelogramo" type="number" placeholder="Base" /> <br><input
+                                id="InputParalelogramo" type="number" placeholder="Lateral" />
+                            <br><button type="button" onclick="calcularPerimetroParalelogramo()">
+                                Perímetro
+                                <input id="InputParalelogramo" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <button type="button" onclick="calcularAreaParalelogramo()">
+                                Área
+                                <input id="InputParalelogramo" type="number" placeholder="Tu resultado" />
+                            </button>
+                        </form>
+                    </div>
+
+                    <button type="button" class="accordion_button"> PENTÁGONO O HEXAGONO REGULAR </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputHexaPen"></label>
+                            <input id="InputHexaPen" type="number" placeholder="Arista" /> <br><input id="InputHexaPen"
+                                type="number" placeholder="Cantidad de lados" /><br> <input id="InputHexaPen"
+                                type="number" placeholder="Apotema" />
+                            <br><button type="button" onclick="calcularPerimetroHexaPen()">
+                                Perímetro
+                                <input id="InputHexaPen" type="number" placeholder="Tu resultado" />
+                            </button>
+                            <button type="button" onclick="calcularAreaHexaPen()">
+                                Área
+                                <input id="InputHexaPen" type="number" placeholder="Tu resultado" />
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!--Tercera columna-->
+                <div class="col-4">
+                    <button type="button" class="accordion_button"> CILINDRO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputCilindro"> </label>
+                            <input id="InputCilindro" type="number" placeholder="Radio" /><br> <input id="InputCilindro"
+                                type="number" placeholder="Altura" />
+                            <br><button type="button" onclick="calcularVolumenCilindro()">
+                                Volumen
+                                <input id="InputCilindro" type="number" placeholder="Tu resultado" />
+                        </form>
+                    </div>
+
+
+                    <button type="button" class="accordion_button"> CONO </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputCono"></label>
+                            <input id="InputCono" type="number" placeholder="Radio" /><br> <input id="InputCono"
+                                type="number" placeholder="Altura" />
+                            <br><button type="button" onclick="calcularVolumenCono()">
+                                Volumen
+                                <input id="InputCono" type="number" placeholder="Tu resultado" />
+                        </form>
+                    </div>
+
+                    <button type="button" class="accordion_button"> PIRAMIDE BASE TRIANGULAR </button>
+                    <div class="accordion_content">
+                        <form>
+                            <label for="InputTT"></label>
+                            <input id="InputTT" type="number" placeholder="Arista" /> <br><input id="InputTT"
+                                type="number" placeholder="Altura" />
+                            <br><button type="button" onclick="calcularVolumenPiramideT()">
+                                Volumen
+                                <input id="InputTT" type="number" placeholder="Tu resultado" />
+                        </form>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./CodigoVersionActual.js"></script>
+</body>
+
+</html>

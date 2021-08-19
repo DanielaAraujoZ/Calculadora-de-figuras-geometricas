@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./EstilosPrimeraVersion.css">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+  <title>Figuras geométricas / Curso práctico de JavaScript/Platzi</title>
+</head>
+
+<body id="body">
+
+  <header>
+    <!-- TITULO -->
+    <h1 id="title">
+      FIGURAS GEOMÉTRICAS
+    </h1>
+    <h2 id="title"> ¡BIENVENIDO!</h2>
+    <p id="texto1"> No olvides ingresar los valores solicitados en cada figura</p>
+
+  </header>
+
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <!--Item-->
+      <!--Une al titulo con lo que se despliega-->
+      <div class="row-cols-1">
+        <!-- PRIMERA FILA-->
+
+
+
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Cuadrado
+            <!--Boton Item-->
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"></div>
+        <div class="accordion-body">
+          <!---->
+          <form>
+            <label for="InputCuadrado"></label>
+            <input id="InputCuadrado" type="number" placeholder="Lado" />
+            <button type="button" onclick="calcularPerimetroCuadrado()">
+              ¡Calcula su perímetro!
+              <input id="InputCuadrado" type="number" placeholder="Tu resultado" />
+            </button>
+            <button type="button" onclick="calcularAreaCuadrado()">
+              ¡Calcula su área!
+              <input id="InputCuadrado" type="number" placeholder="Tu resultado" />
+            </button>
+            <button type="button" onclick="calcularVolumenCuadrado()">
+              ¡Calcula su volumen!
+              <input id="InputCuadrado" type="number" placeholder="Tu resultado" />
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          Rectángulo
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <form>
+            <label for="InputRectangulo"></label>
+            <input id="InputRectangulo" type="number" placeholder="Largo" /> <input id="InputRectangulo" type="number"
+              placeholder="Alto" /> <input id="InputRectangulo" type="number" placeholder="Ancho" />
+            <button type="button" onclick="calcularPerimetroRectangulo()">
+              ¡Calcula su perímetro!
+              <input id="InputRectangulo" type="number" placeholder="Tu resultado" />
+            </button>
+            <button type="button" onclick="calcularAreaRectangulo()">
+              ¡Calcula su área!
+              <input id="InputRectangulo" type="number" placeholder="Tu resultado" />
+            </button>
+            <button type="button" onclick="calcularVolumenRectangulo()">
+              ¡Calcula su volumen!
+              <input id="InputRectangulo" type="number" placeholder="Tu resultado" />
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Triángulo Equilátero
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputTrianguloE"></label>
+              <input id="InputTrianguloE" type="number" placeholder="Lado" /> <input id="InputTrianguloE" type="number"
+                placeholder="Altura" />
+              <button type="button" onclick="calcularPerimetroTrianguloE()">
+                ¡Calcula su perímetro!
+                <input id="InputTrianguloE" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularAreaTringuloE()">
+                ¡Calcula su área!
+                <input id="InputTrianguloE" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularVolumenPiramideC()">
+                ¡Calcula su volumen!
+                <input id="InputTrianguloE" type="number" placeholder="Tu resultado" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Triangulo Rectángulo
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputTrianguloR"></label>
+              <input id="InputTrianguloR" type="number" placeholder="Cateto 1" /><input id="InputTrianguloR"
+                type="number" placeholder="Cateto 2" /><input id="InputTrianguloR" type="number"
+                placeholder="Hipotenusa" /><input id="InputTrianguloR" type="number"
+                placeholder="Ancho (Para volumen)" />
+              <button type="button" onclick="calcularPerimetroTrianguloR()">
+                ¡Calcula su perímetro!
+                <input id="InputTrianguloR" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularAreaTrianguloR()">
+                ¡Calcula su área!
+                <input id="InputTrianguloR" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularVolumenTrianguloR()">
+                ¡Calcula su volumen!
+                <input id="InputTrianguloR" type="number" placeholder="Tu resultado" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Circulo
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputCirculo"></label>
+              <input id="InputCirculo" type="number" placeholder="Radio" />
+              <button type="button" onclick="calcularPerimetroCirculo()">
+                ¡Calcula su perímetro!
+                <input id="InputCirculo" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularAreaCirculo()">
+                ¡Calcula su área!
+                <input id="InputCirculo" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularVolumenCirculo()">
+                ¡Calcula su volumen!
+                <input id="InputCirculo" type="number" placeholder="Tu resultado" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-cols-1">
+    <!-- SEGUNDA FILA-->
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Rombo
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputRombo"> </label>
+              <input id="InputRombo" type="number" placeholder="Lado" /><br><input id="InputRombo" type="number"
+                placeholder="Diagonal menor" /><br><input id="InputRombo" type="number" placeholder="Diagonal Mayor" />
+              <button type="button" onclick="calcularPerimetroRombo()">
+                ¡Calcula su perímetro!
+                <input id="InputRombo" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularAreaRombo()">
+                ¡Calcula su área!
+                <input id="InputRombo" type="number" placeholder="Tu resultado" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Trapecio
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputTrapecio"> </label>
+              <input id="InputTrapecio" type="number" placeholder="Altura" /> <br><input id="InputTrapecio"
+                type="number" placeholder="Base Menor" /><br><input id="InputTrapecio" type="number"
+                placeholder="Base Mayor" />
+              <button type="button" onclick="calcularPerimetroTrapecio()">
+                ¡Calcula su perímetro!
+                <input id="InputTrapecio" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularAreaTrapecio()">
+                ¡Calcula su área!
+                <input id="InputTrapecio" type="number" placeholder="Tu resultado" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Paralelogramo
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputParalelogramo"> </label>
+              <input id="InputParalelogramo" type="number" placeholder="Altura" /> <br><input id="InputParalelogramo"
+                type="number" placeholder="Base" /> <br><input id="InputParalelogramo" type="number"
+                placeholder="Lateral" />
+              <button type="button" onclick="calcularPerimetroParalelogramo()">
+                ¡Calcula su perímetro!
+                <input id="InputParalelogramo" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularAreaParalelogramo()">
+                ¡Calcula su área!
+                <input id="InputParalelogramo" type="number" placeholder="Tu resultado" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Pentágono o Hexágono Regular
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputHexaPen"></label>
+              <input id="InputHexaPen" type="number" placeholder="Arista" /> <br><input id="InputHexaPen" type="number"
+                placeholder="Cantidad de lados" /><br> <input id="InputHexaPen" type="number" placeholder="Apotema" />
+              <button type="button" onclick="calcularPerimetroHexaPen()">
+                ¡Calcula su perímetro!
+                <input id="InputHexaPen" type="number" placeholder="Tu resultado" />
+              </button>
+              <button type="button" onclick="calcularAreaHexaPen()">
+                ¡Calcula su área!
+                <input id="InputHexaPen" type="number" placeholder="Tu resultado" />
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row-cols-1">
+    <!-- TERCERA FILA-->
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Cilindro
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputCilindro"> </label>
+              <input id="InputCilindro" type="number" placeholder="Radio" /><br> <input id="InputCilindro" type="number"
+                placeholder="Altura" />
+              <button type="button" onclick="calcularVolumenCilindro()">
+                ¡Calcula su volumen!
+                <input id="InputCilindro" type="number" placeholder="Tu resultado" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Cono
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputCono"></label>
+              <input id="InputCono" type="number" placeholder="Radio" /><br> <input id="InputCono" type="number"
+                placeholder="Altura" />
+              <button type="button" onclick="calcularVolumenCono()">
+                ¡Calcula su volumen!
+                <input id="InputCono" type="number" placeholder="Tu resultado" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Piramide de base triangular
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <form>
+              <label for="InputTT"></label>
+              <input id="InputTT" type="number" placeholder="Arista" /> <br><input id="InputTT" type="number"
+                placeholder="Altura" />
+              <button type="button" onclick="calcularVolumenPiramideT()">
+                ¡Calcula su volumen!
+                <input id="InputTT" type="number" placeholder="Tu resultado" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  </div>
+
+  <script src="./Figura1.js"></script>
