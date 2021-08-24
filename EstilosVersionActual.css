@@ -64,4 +64,55 @@
     font-weight: bold;
     font-family:  'Josefin Sans', sans-serif;
 } 
-
+.button_Rectangulo{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+.button_TrianguloE{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+.button_TrianguloR{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+.button_Circulo{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+.button_Rombo{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+.button_Trapecio{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+.button_Paralelogramo{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+.button_HexaPenta{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+#button_reset{
+    background-color: red;
+    color: black bold;
+}
