@@ -112,6 +112,24 @@
     font-weight: bold;
     font-family:  'Josefin Sans', sans-serif;
 }
+.button_Cilindro{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+.button_Cono{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
+.button_PiramideT{
+    background-color: #CDDEF9;
+    color:#022050;
+    font-weight: bold;
+    font-family:  'Josefin Sans', sans-serif;
+}
 #button_reset{
     background-color: red;
     color: black bold;

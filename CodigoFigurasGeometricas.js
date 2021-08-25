@@ -14,7 +14,7 @@ document.querySelectorAll('.accordion_button').forEach(button => {
 })
 
 //Funciones cuadrado
-console.group("Cuadrado")
+console.group("Funciones para el calculo de la geometria de las figuras")
 function perimetroCuadrado(lado) {
     return lado * 4
 }
@@ -26,11 +26,7 @@ function areaCuadrado(lado) {
 function volumenCuadrado(lado) {
     return lado * lado * lado
 }
-console.groupEnd()
 
-
-//Funciones rectangulos
-console.group("Rectangulo")
 function perimetroRectangulo(largo, alto) {
     return (largo * 2) + (alto * 2)
 }
@@ -42,11 +38,7 @@ function areaRectangulo(largo, alto) {
 function volumenRectangulo(largo, alto, ancho) {
     return largo * alto * ancho
 }
-console.groupEnd()
 
-
-//Funciones Triangulo Equilatero
-console.group("Triangulo Equilatero")
 function perimetroTrianguloE(lado) {
     return lado * 3
 }
@@ -62,45 +54,36 @@ function volumenPiramideCuadrada(lado, altura) {
         return volumen
     }
 }
-console.groupEnd()
-
-
-//Funciones Triangulo Rectangulo
-console.group("Triangulo Rectangulo")
 
 
 function perimetroTrianguloR(cateto1, cateto2, hipotenusa) {
-   if (cateto1 == 0) {
+    if (cateto1 == 0) {
         cateto1 = Math.sqrt(Math.pow(hipotenusa, 2) - Math.pow(cateto2, 2))
-    }  if (cateto2 == 0) {
+    } if (cateto2 == 0) {
         cateto2 = Math.sqrt(Math.pow(hipotenusa, 2) - Math.pow(cateto1, 2))
-    }   if  (hipotenusa == 0) {
+    } if (hipotenusa == 0) {
         hipotenusa = Math.sqrt(Math.pow(cateto1, 2) + Math.pow(cateto2, 2))
-    } 
+    }
     let c1 = parseInt(cateto1)
     let c2 = parseInt(cateto2)
     let h1 = parseInt(hipotenusa)
-    return c1 +c2 + h1
+    return c1 + c2 + h1
 }
 
 function areaTrianguloR(cateto1, cateto2, hipotenusa) {
     if (cateto1 == 0) {
-       cateto1 = Math.sqrt(Math.pow(hipotenusa, 2) - Math.pow(cateto2, 2))
+        cateto1 = Math.sqrt(Math.pow(hipotenusa, 2) - Math.pow(cateto2, 2))
     } else if (cateto2 == 0) {
-       cateto2 = Math.sqrt(Math.pow(hipotenusa, 2) - Math.pow(cateto1, 2))
-    } 
-    return (cateto1 * cateto2)/2
+        cateto2 = Math.sqrt(Math.pow(hipotenusa, 2) - Math.pow(cateto1, 2))
+    }
+    return (cateto1 * cateto2) / 2
 }
 
 
 function volumenTrianguloR(cateto1, cateto2, ancho) {
     return (cateto1 * cateto2 * ancho) / 2
 }
-console.groupEnd()
 
-
-//Funciones circulo
-console.group("Circulo")
 let PI1 = Math.PI;
 const PI = PI1.toFixed(2)
 
@@ -114,7 +97,7 @@ function perimetroCirculo(radio) {
 }
 
 function areaCirculo(radio) {
-    return PI * (radio* radio)
+    return PI * (radio * radio)
 }
 
 function volumenEsfera(radio) {
@@ -122,86 +105,56 @@ function volumenEsfera(radio) {
     let ab1 = (4 * PI * ab) / 3
     return ab1.toFixed(2)
 }
-console.groupEnd()
 
-
-//Funciones rombo
-console.group("Rombo")
 function perimetroRombo(lado) {
     return lado * 4
 }
 
-function areaRombo(lado, diagonalMenor, diagonalMayor ) {
-    if (diagonalMayor === undefined) {
-        let cateto1 = Math.sqrt(Math.pow(lado, 2) - Math.pow((diagonalMenor / 2), 2))
-        return (diagonalMenor * (cateto1 * 2)) / 2
-    } else if (diagonalMenor === undefined) {
-        let cateto2 = Math.sqrt(Math.pow(lado, 2) - Math.pow((diagonalMayor / 2), 2))
-        return (diagonalMayor * (cateto2 * 2)) / 2
-    } else {
-        return (diagonalMayor * diagonalMenor) / 2
-    }
+function areaRombo(lado, diagonalMenor, diagonalMayor) {
+    let area = (diagonalMenor * diagonalMayor) / 2
+    return area
+
 }
-console.groupEnd()
 
-
-//Funciones Trapecio
-console.group("Trapecio")
 function perimetroTrapecio(altura, baseMenor, baseMayor) {
+
     let esquina = (baseMayor - baseMenor) / 2
-    let lado = Math.sqrt(Math.pow(esquina, 2) + Math.pow)(altura, 2)
-    return baseMayor + baseMenor + (lado * 2)
+    let lado = Math.sqrt(Math.pow(esquina, 2) + Math.pow(altura, 2))
+    let perimetroT = parseInt(baseMayor) + parseInt(baseMenor) + parseInt((lado * 2))
+    return perimetroT
 }
 
 function areaTrapecio(altura, baseMayor, baseMenor) {
-    return altura * baseMayor * baseMenor
+    let areaT = (baseMayor + baseMenor) / 2 * altura
+    return areaT
 }
-console.groupEnd()
 
-
-//Funciones Paralelogramo
-console.group("Paralelogramo")
-function perimetroParalelogramo(base,lateral) {
+function perimetroParalelogramo(base, lateral) {
     return (lateral * 2) + (base * 2)
 }
 function areaParalelogramo(base, altura) {
     return base * altura
 }
-console.groupEnd()
 
-
-//Funciones Hexagono o Pentagono
-console.group("Pentagono o Hexagono ")
 function perimetroPH(lados, arista) {
     return arista * lados
 }
 
 function areaPH(apotema, perimetro) {
-    return (perimetro(perimetroPH(lados, arista)) * apotema) / 2
+    return (perimetro * apotema) / 2
 }
-console.groupEnd()
 
-
-//Cilindro
-console.group("Cilindro")
 function volumenCilindro(radio, altura) {
     let areaBase = Math.pow(radio, 2) * PI
     return areaBase * altura
 }
-console.groupEnd()
 
-//Cono
-console.group("Cono")
 function volumenCono(radio, altura) {
     let areaBase = Math.pow(radio, 2) * PI
     return (areaBase * altura) / 3
 
 }
-console.groupEnd()
 
-
-//Piramide de base triangular
-console.group("Piramide base triangular")
 function volumenPiramideT(arista, altura) {
     if (arista > 0) {
         let alturaBase = Math.sqrt(Math.pow(arista, 2) - Math.pow((arista / 2), 2))
@@ -213,9 +166,7 @@ function volumenPiramideT(arista, altura) {
 }
 console.groupEnd()
 
-
-
-//ATRAPA DATOS DE HTML EN FUNCIONES DE JAVASCRIPT PARA EL CUADRADO
+console.group("Funciones que toman los datos de HTML")
 
 function calcularPerimetroCuadrado() {
     const input = document.getElementById("CuadradoP").value
@@ -236,10 +187,8 @@ function calcularVolumenCuadrado() {
 }
 
 
-//ATRAPA DATOS DE HTML EN FUNCIONES DE JAVASCRIPT PARA EL RECTANGULO
-
 function calcularPerimetroRectagulo() {
-    const largo = document.getElementById("RectanguloLargo").value                                                                                                                                                                                                                                                                                                                                                                                   
+    const largo = document.getElementById("RectanguloLargo").value
     const alto = document.getElementById("RectanguloAlto").value
     const perimetro = perimetroRectangulo(largo, alto)
 
@@ -265,8 +214,6 @@ function calcularVolumenRectagulo() {
 }
 
 
-//ATRAPA DATOS DE HTML EN FUNCIONES DE JAVASCRIPT PARA EL TRIANGULO EQUILATERO
-
 function calcularPerimetroTrianguloE() {
     const lado = document.getElementById("TrianguloLadoE").value
     const perimetro = perimetroTrianguloE(lado)
@@ -290,9 +237,8 @@ function calcularVolumenTrianguloE() {
     document.getElementById("triangulo_VolumenE").innerHTML = volumen + "cm3"
 }
 
-//ATRAPA DATOS DE HTML EN FUNCIONES DE JAVASCRIPT PARA EL TRIANGULO RECTÁNGULO
 
-function calcularPerimetroTrianguloR() { //PENDIENTE. ¿PORQUE CONCATENA LOS VALORES EN VEZ DE SUMARLOS?
+function calcularPerimetroTrianguloR() { 
     const cateto_1 = document.getElementById("TrianguloCateto1").value
     const cateto_2 = document.getElementById("TrianguloCateto2").value
     const hipotenusa1 = document.getElementById("TrianguloHipotenusa").value
@@ -311,7 +257,7 @@ function calcularAreaTrianguloR() {
     document.getElementById("triangulo_AreaR").innerHTML = area + "cm2"
 }
 
-function calcularVolumenTrianguloR(){
+function calcularVolumenTrianguloR() {
     const cateto_1 = document.getElementById("TrianguloCateto1").value
     debugger
     const cateto_2 = document.getElementById("TrianguloCateto2").value
@@ -323,7 +269,6 @@ function calcularVolumenTrianguloR(){
 
 }
 
-//ATRAPA DATOS DE HTML EN FUNCIONES DE JAVASCRIPT PARA EL CIRCULO
 function calcularPerimetroCirculo() {
     const radio = document.getElementById("radioCirculo").value
     const perimetro = perimetroCirculo(radio)
@@ -331,78 +276,115 @@ function calcularPerimetroCirculo() {
     document.getElementById("circulo_Perimetro").innerHTML = perimetro.toFixed(2) + "cm"
 }
 
-function calcularAreaCirculo(){
+function calcularAreaCirculo() {
     const radio = document.getElementById("radioCirculo").value
     const area = areaCirculo(radio)
 
     document.getElementById("circulo_Area").innerHTML = area.toFixed(2) + "cm2"
 }
 
-function calcularVolumenCirculo(){
+function calcularVolumenCirculo() {
     const radio = document.getElementById("radioCirculo").value
     const volumen = volumenEsfera(radio)
 
     document.getElementById("circulo_Volumen").innerHTML = volumen + "cm3"
 }
 
-//ATRAPA DATOS DE HTML EN FUNCIONES DE JAVASCRIPT PARA EL ROMBO
-function calcularPerimetroRombo(){
+function calcularPerimetroRombo() {
     const lado = document.getElementById("Rombo_Lado").value
     const perimetro = perimetroRombo(lado)
 
-    document.getElementById("Rombo_Perimetro").innerHTML = perimetro + "cm"
+    document.getElementById("Rombo_Perimetro").innerHTML = perimetro.toFixed(2) + "cm"
 }
-function calcularAreaRombo(){
+function calcularAreaRombo() {
     const lado = document.getElementById("Rombo_Lado").value
-    const diagonal_Menor = document.getElementById("Rombo_diagonalMenor").value
-    const diagonal_Mayor = document.getElementById("Rombo_diagonalMayor").value
-    const area = areaRombo(lado, diagonal_Menor, diagonal_Mayor)
+    const diagonalMenor = document.getElementById("Rombo_diagonalMenor").value
+    const diagonalMayor = document.getElementById("Rombo_diagonalMayor").value
+    const area = areaRombo(lado, diagonalMenor, diagonalMayor)
 
     document.getElementById("Rombo_Area").innerHTML = area + "cm2"
 
-    
+
 }
 
-//ATRAPA DATOS DE HTML EN FUNCIONES DE JAVASCRIPT PARA EL TRAPECIO
-function calcularPerimetroTrapecio(){
-    const altura = document.getElementById("Trapecio_Altura").value
-    const baseMenor = document.getElementById("Trapecio_baseMenor").value
-    const baseMayor = document.getElementById("Trapecio_baseMayor").value
+
+function calcularPerimetroTrapecio() {
+    const altura = document.getElementById("trapecio_Altura").value
+    const baseMenor = document.getElementById("trapecio_baseMenor").value
+    const baseMayor = document.getElementById("trapecio_baseMayor").value
     const perimetro = perimetroTrapecio(altura, baseMenor, baseMayor)
 
-    document.getElementById("Trapecio_Perimetro").innerHTML = perimetro + "cm"
+    document.getElementById("trapecio_Perimetro").innerHTML = perimetro + "cm"
 }
 
-function calcularAreaTrapecio(){
-    const altura = document.getElementById("Trapecio_Altura").value
-    const baseMenor = document.getElementById("Trapecio_baseMenor").value
-    const baseMayor = document.getElementById("Trapecio_baseMayor").value
+function calcularAreaTrapecio() {
+    const altura = document.getElementById("trapecio_Altura").value
+    const baseMenor = document.getElementById("trapecio_baseMenor").value
+    const baseMayor = document.getElementById("trapecio_baseMayor").value
     const area = areaTrapecio(altura, baseMenor, baseMayor)
 
-    document.getElementById("Trapecio_Area").innerHTML = area + "cm2"
+    document.getElementById("trapecio_Area").innerHTML = area + "cm2"
 }
 
-//ATRAPA DATOS DE HTML EN FUNCIONES DE JAVASCRIPT PARA EL PARALELOGRAMO
-function calcularPerimetroParalelogramo(){
-    const base = document.getElementById("Paralelogramo_base").value
-    const lateral = document.getElementById("Paralelogramo_lateral").value
+
+function calcularPerimetroParalelogramo() {
+    const base = document.getElementById("paralelogramo_base").value
+    const lateral = document.getElementById("paralelogramo_lateral").value
     const perimetro = perimetroParalelogramo(base, lateral)
 
-    document.getElementById("Paralelogramo_Perimetro").innerHTML = perimetro + "cm"
+    document.getElementById("paralelogramo_Perimetro").innerHTML = perimetro + "cm"
 }
 
-function calcularAreaParalelogramo(){
-    const base = document.getElementById("Paralelogramo_base").value
-    const altura = document.getElementById("Paralelogramo_Altura").value
+function calcularAreaParalelogramo() {
+    const base = document.getElementById("paralelogramo_base").value
+    const altura = document.getElementById("paralelogramo_Altura").value
     const area = areaParalelogramo(base, altura)
 
-    document.getElementById("Paralelogramo_Area").innerHTML = area + "cm2"
-}
-
-//ATRAPA DATOS DE HTML EN FUNCIONES DE JAVASCRIPT PARA EL PENTAGONO O HEXAGONO REGULAR
-
-function calcularPerimetroHexaPenta(){
-
+    document.getElementById("paralelogramo_Area").innerHTML = area + "cm2"
 }
 
 
+function calcularPerimetroHexaPenta() {
+    const lados = document.getElementById("hexaPenta_Lados").value
+    const arista = document.getElementById("hexaPenta_Arista").value
+    const perimetro = perimetroPH(lados, arista)
+
+    document.getElementById("hexaPenta_Perimetro").innerHTML = perimetro + "cm"
+}
+
+function calcularAreaHexaPenta() {
+    const apotema = document.getElementById("hexaPenta_Apotema").value
+    const lados = document.getElementById("hexaPenta_Lados").value
+    const arista = document.getElementById("hexaPenta_Arista").value
+    const perimetro = perimetroPH(lados, arista)
+    const area = areaPH(apotema, perimetro)
+
+    document.getElementById("hexaPenta_Area").innerHTML = area + "cm2"
+}
+
+function calcularVolumenCilindro() {
+    const radio = document.getElementById("cilindro_Radio").value
+    const altura = document.getElementById("cilindro_Altura").value
+    const volumen = volumenCilindro(radio, altura)
+
+    document.getElementById("cilindro_Volumen").innerHTML = volumen + "cm3"
+}
+
+function calcularVolumenCono() {
+    const radio = document.getElementById("cono_Radio").value
+    const altura = document.getElementById("cono_Altura").value
+    const volumen = volumenCono(radio, altura)
+
+    document.getElementById("cono_Volumen").innerHTML = volumen + "cm3"
+
+}
+
+function calcularVolumenPiramideT() {
+    const arista = document.getElementById("piramideT_Arista").value
+    const altura = document.getElementById("piramideT_Altura").value
+    const vol = volumenPiramideT(arista, altura)
+    const volumen = vol.toFixed(2)
+
+    document.getElementById("piramideT_Volumen").innerHTML = volumen + "cm3"
+}
+console.groupEnd()
